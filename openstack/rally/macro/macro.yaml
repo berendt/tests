@@ -88,7 +88,7 @@
 {% endif %}
 {%- endmacro %}
 
-{%- macro glance_args(location, container="bare", type="qcow2") %}
+{%- macro glance_args(location, container="bare", type="raw") %}
         container_format: {{ container }}
         disk_format: {{ type }}
         image_location: {{ location }}
