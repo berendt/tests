@@ -9,6 +9,8 @@
 {% if "cinder" in service_list %}
   Authenticate.validate_cinder:
     -
+      args:
+        repetitions: 1
       context:
         {{ user_context(tenants_amount, users_amount, use_existing_users) }}
       runner:
@@ -19,6 +21,8 @@
 {% if "glance" in service_list %}
   Authenticate.validate_glance:
     -
+      args:
+        repetitions: 1
       context:
         {{ user_context(tenants_amount, users_amount, use_existing_users) }}
       runner:
@@ -29,6 +33,8 @@
 {% if "neutron" in service_list %}
   Authenticate.validate_neutron:
     -
+      args:
+        repetitions: 1
       context:
         {{ user_context(tenants_amount, users_amount, use_existing_users) }}
       runner:
@@ -39,6 +45,8 @@
 {% if "nova" in service_list %}
   Authenticate.validate_nova:
     -
+      args:
+        repetitions: 1
       context:
         {{ user_context(tenants_amount, users_amount, use_existing_users) }}
       runner:
