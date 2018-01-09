@@ -7,7 +7,7 @@
     - cinder
     - glance
   use_existing_users: false
-  image_name: "^Ubuntu 16\.04.*$"
+  image_name: "^Ubuntu 16.04.*$"
   flavor_name: "1C-1GB-10GB"
   glance_image_location: "http://share.osism.io/images/ubuntu/xenial-server-cloudimg-amd64-disk1.raw"
   smoke: true
