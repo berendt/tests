@@ -13,30 +13,30 @@
 {%- set tenants_amount = tenants_amount|default(1) %}
 {%- endif %}
 
-{%- from "macro/macro.yaml" import user_context, vm_params, unlimited_volumes, constant_runner, rps_runner, no_failures_sla -%}
-{%- from "macro/macro.yaml" import volumes, unlimited_nova, unlimited_neutron, glance_args -%}
+{%- from "macro/macro.yml" import user_context, vm_params, unlimited_volumes, constant_runner, rps_runner, no_failures_sla -%}
+{%- from "macro/macro.yml" import volumes, unlimited_nova, unlimited_neutron, glance_args -%}
 
 ---
 {% if "authentication" in service_list %}
-{%- include "scenario/authentication.yaml"-%}
+{%- include "scenario/authentication.yml"-%}
 {% endif %}
 
 {% if "cinder" in service_list %}
-{%- include "scenario/cinder.yaml"-%}
+{%- include "scenario/cinder.yml"-%}
 {% endif %}
 
 {% if "keystone" in service_list %}
-{%- include "scenario/keystone.yaml"-%}
+{%- include "scenario/keystone.yml"-%}
 {% endif %}
 
 {% if "nova" in service_list %}
-{%- include "scenario/nova.yaml"-%}
+{%- include "scenario/nova.yml"-%}
 {% endif %}
 
 {% if "glance" in service_list %}
-{%- include "scenario/glance.yaml"-%}
+{%- include "scenario/glance.yml"-%}
 {% endif %}
 
 {% if "neutron" in service_list %}
-{%- include "scenario/neutron.yaml"-%}
+{%- include "scenario/neutron.yml"-%}
 {% endif %}
