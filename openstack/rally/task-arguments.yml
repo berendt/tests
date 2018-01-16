@@ -6,6 +6,7 @@ service_list:
   - keystone
   - cinder
   - glance
+  - heat
 use_existing_users: false
 image_name: "^(Cirros|cirros).*$"
 flavor_name: "1C-1GB-10GB"
