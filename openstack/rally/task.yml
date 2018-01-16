@@ -2,7 +2,7 @@
 {%- set image_name = image_name|default("^(Cirros|cirros).*$") %}
 {%- set flavor_name = flavor_name|default("1C-256MB-10GB") %}
 {%- set use_existing_users = use_existing_users|default(false) %}
-{%- set service_list = service_list|default(["authentication", "cinder", "keystone", "nova", "glance", "neutron", "heat"]) %}
+{%- set service_list = service_list|default(["authentication", "quota", "cinder", "keystone", "nova", "glance", "neutron", "heat"]) %}
 {%- set smoke = smoke|default(true) %}
 {%- set controllers_amount = controllers_amount|default(1) %}
 {%- if smoke %}
@@ -19,6 +19,10 @@
 ---
 {% if "authentication" in service_list %}
 {%- include "scenario/authentication.yml"-%}
+{% endif %}
+
+{% if "quota" in service_list %}
+{%- include "scenario/quota.yml"-%}
 {% endif %}
 
 {% if "cinder" in service_list %}

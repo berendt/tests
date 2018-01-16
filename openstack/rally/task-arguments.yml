@@ -1,6 +1,7 @@
 ---
 service_list:
   - authentication
+  - quota
   - nova
   - neutron
   - keystone
