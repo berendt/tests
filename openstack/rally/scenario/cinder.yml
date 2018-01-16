@@ -176,3 +176,32 @@
         {{ constant_runner(concurrency=min(50, 2*controllers_amount),times=min(10, 3*controllers_amount), is_smoke=smoke) }}
       sla:
         {{ no_failures_sla() }}
+
+  CinderVolumes.create_volume_and_clone:
+    -
+      args:
+        size: 1
+      runner:
+        {{ constant_runner(concurrency=min(50, 2*controllers_amount),times=min(10, 3*controllers_amount), is_smoke=smoke) }}
+      context:
+        {% call user_context(tenants_amount, users_amount, use_existing_users) %}
+        quotas:
+          {{ unlimited_volumes() }}
+        {% endcall %}
+      sla:
+        {{ no_failures_sla() }}
+    -
+      args:
+        size:
+          min: 1
+          max: 5
+        nested_level: 3
+      runner:
+        {{ constant_runner(concurrency=min(50, 2*controllers_amount),times=min(10, 3*controllers_amount), is_smoke=smoke) }}
+      context:
+        {% call user_context(tenants_amount, users_amount, use_existing_users) %}
+        quotas:
+          {{ unlimited_volumes() }}
+        {% endcall %}
+      sla:
+        {{ no_failures_sla() }}
