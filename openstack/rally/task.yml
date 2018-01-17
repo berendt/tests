@@ -1,4 +1,4 @@
-{%- set glance_image_location = glance_image_location|default("http://share.osism.io/images/cirros/cirros-0.4.0-x86_64-disk.img") %}
+{%- set glance_image_location = glance_image_location|default("http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img") %}
 {%- set image_name = image_name|default("^(Cirros|cirros).*$") %}
 {%- set flavor_name = flavor_name|default("1C-256MB-10GB") %}
 {%- set use_existing_users = use_existing_users|default(false) %}
