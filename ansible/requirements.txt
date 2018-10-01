@@ -1,3 +1,2 @@
-testinfra
-ansible
 pytest-xdist
+testinfra
